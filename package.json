@@ -1,7 +1,7 @@
 {
   "name": "postcss-extract-comment",
-  "version": "1.0.0",
-  "description": "Export JSON from a css comment",
+  "version": "0.0.0",
+  "description": "A postcss plugin to extract text from a comment",
   "main": "index.js",
   "scripts": {
     "build": "babel src -d lib",
@@ -14,8 +14,7 @@
   },
   "keywords": [
     "postcss",
-    "export",
-    "json",
+    "extract",
     "css",
     "comment"
   ],
