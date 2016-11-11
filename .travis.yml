@@ -5,7 +5,7 @@ node_js:
   - "6"
   - "stable"
 before_script:
-  - 'if [ "$POSTCSS_VERSION" ]; then npm install nunjucks@$POSTCSS_VERSION; fi'
+  - 'if [ "$POSTCSS_VERSION" ]; then npm install postcss@$POSTCSS_VERSION; fi'
 
 env:
   - POSTCSS_VERSION=^5.0.0
