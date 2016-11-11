@@ -1,12 +1,22 @@
 import postcss from 'postcss';
 
-export default postcss.plugin('export-json', ({ process } = {}) =>
+export default postcss.plugin('extract-comment', ({ process, pattern } = {}) =>
   css => {
-    css.walkComments(comment => {
-      if (comment.text.startsWith('JSON')) {
-        let json = comment.text.substring(4);
-        process ? process(json) : console.log(json)
-      }
-    });
+
+    if (!process) {
+      throw new Error('postcss-extract-comment requires the process method to be passed to it');
+    }
+
+    if (!pattern) {
+      css.walkComments(comment => process(comment));
+    }
+
+    if (pattern) {
+      css.walkComments(comment => {
+        if (comment.text.match(pattern)) {
+          process(comment)
+        }
+      });
+    }
   }
 );

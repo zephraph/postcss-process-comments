@@ -1,25 +1,42 @@
-import { process, processJSON } from './helpers';
+import { spy, extract } from './helpers';
 import test from 'ava';
-import { spy } from 'sinon';
 
-test('Does not process a normal comment', t => {
-  let cb = spy();
-  process('/* hello world! */', { process: cb });
-  t.falsy(cb.called);
-});
-
-test('Processes a comment starting with JSON', processJSON, '/* JSON{} */', {});
-
-test(
-  'Should match a single property',
-  processJSON,
-  '/* JSON{"test": true} */',
-  { test: true }
+test('Extract all comments if not pattern given',
+  spy,
+  '/* hello world! */',
+  'called'
 );
 
-test(
-  'Should match a deep property',
-  processJSON,
-  '/* JSON{"test": {"deep": true}} */',
-  { test: { deep: true } }
+test('Should not extract a comment that doesn\'t match the pattern',
+  spy,
+  { comment: '/* hello world */', pattern: /^TEST/ },
+  'notCalled'
+);
+
+test('Should extract a comment that does match the pattern',
+  spy,
+  { comment: '/* TEST: hello world */', pattern: /^TEST/ },
+  'called'
+);
+
+test('Should extract matching text from mixed comments',
+  spy,
+  { comment: '/* TEST: this */ /* Hello World */', pattern: /^TEST/ },
+  'calledOnce'
+);
+
+test('Should extract multiple comment strings',
+  spy,
+  { comment: '/* TEST: hello */ /* TEST: world */', pattern: /^TEST/ },
+  'calledTwice'
+);
+
+test('Should extract a single comment', extract, '/* hello */', 'hello');
+
+test('Should extract multiple comments', extract, '/* hello */ /* world */', ['hello', 'world']);
+
+test('Should extract comment with pattern',
+  extract,
+  { comment: '/* hello world */', pattern: /^hello/ },
+  'hello world'
 );
