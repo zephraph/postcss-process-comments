@@ -1,4 +1,4 @@
-# postcss-process-comments
+# postcss-process-comments [![Build Status](https://travis-ci.org/zephraph/postcss-process-comments.svg?branch=master)](https://travis-ci.org/zephraph/postcss-process-comments)
 
 A plugin to process text from css comments
 
