@@ -1,6 +1,6 @@
 {
   "name": "postcss-process-comments",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A postcss plugin to process text from css comment",
   "main": "index.js",
   "scripts": {
