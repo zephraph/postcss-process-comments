@@ -1,7 +1,7 @@
 {
-  "name": "postcss-extract-comment",
+  "name": "postcss-process-comments",
   "version": "0.0.0",
-  "description": "A postcss plugin to extract text from a comment",
+  "description": "A postcss plugin to process text from css comment",
   "main": "index.js",
   "scripts": {
     "build": "babel src -d lib",
@@ -10,23 +10,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zephraph/postcss-extract-comment.git"
+    "url": "git+https://github.com/zephraph/postcss-process-comments.git"
   },
   "keywords": [
     "postcss",
-    "extract",
+    "process",
     "css",
     "comment"
   ],
   "author": "Zephraph <zephraph@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zephraph/postcss-extract-comment/issues"
+    "url": "https://github.com/zephraph/postcss-process-comments/issues"
   },
   "peerDependencies": {
     "postcss": "^5.0.0"
   },
-  "homepage": "https://github.com/zephraph/postcss-extract-comment#readme",
+  "homepage": "https://github.com/zephraph/postcss-process-comments#readme",
   "devDependencies": {
     "ava": "^0.16.0",
     "babel-cli": "^6.18.0",
