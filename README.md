@@ -1,6 +1,6 @@
-# postcss-extract-comment
+# postcss-process-comments
 
-A plugin to extract text from css comments
+A plugin to process text from css comments
 
 ## API
 
@@ -13,14 +13,14 @@ A plugin to extract text from css comments
 ## Usage
 
 ```javascript
-import extractComment from 'postcss-extract-comment';
+import processComment from 'postcss-process-comments';
 import postcss from 'postcss';
 
 const process = ({ text }) => console.log(text);
 
 // Prints all comments
-postcss([ extractComment({ process }) ]);
+postcss([ processComment({ process }) ]);
 
 // prints all comments starting with the test TEST
-postcss([ extractComment({ process, pattern: /^TEST/ })]);
+postcss([ processComment({ process, pattern: /^TEST/ })]);
 ```

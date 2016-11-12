@@ -27,7 +27,7 @@ export function spy(t, input, expected) {
   t.true(cb[expected]);
 }
 
-export function extract(t, input, expected) {
+export function matches(t, input, expected) {
   const { comment, pattern } = handleInput(input);
 
   process(comment, { pattern, process: ({ text }) => {
