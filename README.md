@@ -1,5 +1,7 @@
 # postcss-process-comments [![Build Status](https://travis-ci.org/zephraph/postcss-process-comments.svg?branch=master)](https://travis-ci.org/zephraph/postcss-process-comments)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/zephraph/postcss-process-comments.svg)](https://greenkeeper.io/)
+
 A plugin to process text from css comments
 
 ## API
